@@ -1,31 +1,17 @@
 # Validação do prompt
 
-O [prompt](../prompt.md) foi executado com o [exemplo de log](../exemplo-log.txt) em diferentes IAs. As respostas completas estão nesta pasta, e a tabela abaixo compara cada uma com a [resposta esperada](../resposta-esperada.md).
+Respostas reais de quatro IAs ao [prompt](../prompt.md), executado com o [exemplo de log](../exemplo-log.txt).
 
-| Critério | ChatGPT | Gemini | Claude | Copilot |
-|---|:-:|:-:|:-:|:-:|
-| Identificou a queda da Gi1/0/1 como causa raiz | | | | |
-| Tratou os eventos de Spanning Tree como consequência | | | | |
-| Explicou a mudança de root bridge | | | | |
-| Identificou o duplex mismatch e a correção (mesma configuração nos dois lados) | | | | |
-| Identificou a violação de port security e a possibilidade de *err-disabled* | | | | |
-| Tratou a alteração via vty0 como ponto de auditoria | | | | |
-| Citou a evidência (horário/trecho) em cada conclusão | | | | |
-| Começou com um resumo e ordenou os problemas por prioridade | | | | |
-| Informou evidência, diagnóstico, impacto, ação e confirmação em cada problema | | | | |
-| Não inventou informações ausentes no log | | | | |
-
-Legenda: ✅ atendeu · ⚠️ parcial · ❌ não atendeu
-
-## Respostas
-
-| IA | Data | Arquivo |
+| IA | Plano / modelo | Arquivo |
 |---|---|---|
-| ChatGPT | | [chatgpt.md](chatgpt.md) |
-| Gemini | | [gemini.md](gemini.md) |
-| Claude | | [claude.md](claude.md) |
-| Copilot | | [copilot.md](copilot.md) |
+| ChatGPT | ChatGPT Plus, esforço alto | [chatgpt.md](chatgpt.md) |
+| Gemini | Gemini 3.1 Pro | [gemini.md](gemini.md) |
+| Claude | Claude Pro, Opus 5.5, esforço alto | [claude.md](claude.md) |
+| Copilot | Microsoft 365 Copilot | [copilot.md](copilot.md) |
 
-## Observações
+## Condições do teste
 
-(Diferenças relevantes entre as respostas e o que elas indicam sobre o prompt.)
+- Cada IA foi usada em um chat novo, sem referências a conversas anteriores.
+- A última instrução do prompt testado foi "Responda de forma curta, objetiva.", sem "e em português do Brasil".
+- O log foi colado como estava no PDF do desafio, com mensagens quebradas em duas linhas e uma linha extra (`Unset`).
+- No ChatGPT, no Gemini e no Claude, depois da resposta, foi feita a pergunta "Porque respondeu com verificação em formato de CLI?".
