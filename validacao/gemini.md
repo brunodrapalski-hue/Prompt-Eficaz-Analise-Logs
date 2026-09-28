@@ -11,7 +11,7 @@
 
 <br>
 
-## Resposta da IA GEMINI
+## Resposta da IA Gemini
 
 **Resumo**
 O log (com padrão de sistema Cisco IOS) demonstra a queda de uma interface que muito provavelmente desencadeou uma mudança na topologia do Spanning Tree, resultando na eleição de um novo Root Bridge. Adicionalmente, foram reportados um erro crônico de configuração de duplex com um switch vizinho e um bloqueio por segurança de porta, seguidos por uma alteração de configuração feita remotamente por um administrador.
@@ -45,6 +45,8 @@ O log (com padrão de sistema Cisco IOS) demonstra a queda de uma interface que 
 * **Verificação:** `show interfaces GigabitEthernet1/0/2` (buscar contadores de erro/colisão) e `show cdp neighbors GigabitEthernet1/0/2 detail`.
 
 ---
+
+>br>
 
 ## Fiz uma Pergunta de acompanhamento
 
