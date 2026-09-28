@@ -7,11 +7,11 @@ A proposta foi construir um prompt que não apenas identificasse mensagens de er
 Depois de definir essa estrutura, usei o mesmo cenário de log para validar o prompt em quatro ferramentas diferentes: 
 
 ```bash
-`ChatGPT`, `Claude`, `Gemini` e `Microsoft Copilot`.
+ChatGPT, Claude, Gemini e Microsoft Copilot.
 ```
 Cada teste foi realizado em uma conversa nova e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
 
-Não determinar qual IA é melhor, mas observar como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir desses registros, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
+Não determinei qual IA é melhor, mas observei como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir disso, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
 
 <br>
 
@@ -30,9 +30,7 @@ Não determinar qual IA é melhor, mas observar como cada uma interpretaria as m
 
 ## Como o prompt foi construído
 
-Durante a elaboração, procurei responder aos desafios comuns em análises feitas por IA: receber uma resposta tecnicamente convincente, mas baseada em informações que não estavam presentes no log.
-
-Por isso, o prompt foi estruturado para manter a análise presa às evidências disponíveis, diferenciar fatos de hipóteses, considerar a relação entre os eventos e terminar com próximos passos práticos de investigação.
+Procurei responder aos desafios comuns em análises feitas por IA: receber uma resposta tecnicamente convincente, mas baseada em informações que não estavam presentes no log. Por isso, o prompt foi estruturado para manter a análise presa às evidências disponíveis, diferenciar fatos de hipóteses, considerar a relação entre os eventos e terminar com próximos passos práticos de investigação.
 
 | Instrução do prompt | Intenção |
 |---|---|
@@ -88,22 +86,20 @@ A intenção não é exigir uma resposta textual idêntica, mas verificar se a a
 
 Como validação complementar, executei o prompt em quatro ferramentas diferentes:
 
-- ChatGPT;
-- Claude;
-- Gemini;
-- Microsoft Copilot.
+- ChatGPT `Plano Plus Alta`
+- Claude `Plano Pro Opus Alto`
+- Gemini  `Plano 3.1 Pro`
+- Microsoft Copilot  `Plano Microsoft 365`
 
-Os testes foram feitos em conversas novas, sem referências anteriores, utilizando o mesmo trecho de log.
+> Os testes foram feitos em conversas novas, sem referências anteriores, utilizando o mesmo trecho de log.
 
 O objetivo não foi comparar ou classificar os modelos, mas observar se as instruções principais do prompt continuavam sendo respeitadas em ferramentas diferentes: identificar os eventos relevantes, relacionar causa e consequência, diferenciar evidência de hipótese e sugerir próximos passos coerentes.
 
-As respostas completas foram preservadas na pasta [validacao/](validacao/) para permitir a conferência dos resultados.
+> As respostas completas foram preservadas na pasta [validacao/](validacao/) para permitir a conferência dos resultados.
 
 ## O que observei na validação
 
-As respostas variaram em profundidade e forma de apresentação, mas os principais eventos do log foram identificados de maneira consistente.
-
-A queda da interface e os eventos seguintes de Spanning Tree foram, em geral, relacionados como parte do mesmo incidente. O duplex mismatch e a violação de Port Security também foram reconhecidos como problemas distintos.
+As respostas variaram em profundidade e forma de apresentação, mas os principais eventos do log foram identificados de maneira consistente. A queda da interface e os eventos seguintes de Spanning Tree foram, em geral, relacionados como parte do mesmo incidente. O duplex mismatch e a violação de Port Security também foram reconhecidos como problemas distintos.
 
 As maiores diferenças apareceram no nível de inferência adotado por cada IA e na forma de organizar os eventos. Isso reforçou a importância de uma das regras do prompt: separar claramente o que está evidenciado no log do que ainda é hipótese.
 
