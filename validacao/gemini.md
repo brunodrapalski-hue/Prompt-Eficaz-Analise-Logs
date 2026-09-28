@@ -16,8 +16,6 @@
 **Resumo**
 O log (com padrão de sistema Cisco IOS) demonstra a queda de uma interface que muito provavelmente desencadeou uma mudança na topologia do Spanning Tree, resultando na eleição de um novo Root Bridge. Adicionalmente, foram reportados um erro crônico de configuração de duplex com um switch vizinho e um bloqueio por segurança de porta, seguidos por uma alteração de configuração feita remotamente por um administrador.
 
----
-
 **Problemas Identificados (em ordem de prioridade)**
 
 #### 1. Queda de interface principal e instabilidade na topologia (STP)
