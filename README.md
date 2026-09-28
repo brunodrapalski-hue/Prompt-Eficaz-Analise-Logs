@@ -9,7 +9,7 @@ Depois de definir essa estrutura, usei o mesmo cenário de log para validar o pr
 ```bash
 ChatGPT, Claude, Gemini e Microsoft Copilot.
 ```
-Cada teste foi realizado em uma conversa nova e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
+Cada teste foi realizado em uma chat novo e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
 
 Não determinei qual IA é melhor, mas observei como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir disso, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
 
