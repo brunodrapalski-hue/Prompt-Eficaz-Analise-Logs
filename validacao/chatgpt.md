@@ -5,11 +5,13 @@
 | **Plano / modelo** | ChatGPT Plus, esforço alto |
 | **Condições** | Chat novo, sem referências. Ver [condições do teste](README.md#condições-do-teste) |
 
+<br>
+
 > Resposta colada sem alterações de texto.
 
 <br>
 
-## Resposta da IA ChatGPT [prompt](prompt.md)
+## Resposta da IA ChatGPT 
 
 O log indica uma **falha de enlace em Gi1/0/1 às 14:01:22**, seguida imediatamente por uma **reconvergência do Spanning Tree na VLAN 10**, com alteração do caminho até a root bridge. Além disso, há dois problemas independentes relevantes: **duplex mismatch em Gi1/0/2** e uma **violação de Port Security em Gi1/0/5**.
 
@@ -73,12 +75,17 @@ Houve uma alteração de configuração originada pela sessão VTY associada a `
 Para determinar a causa original da queda de Gi1/0/1 seriam necessários, principalmente, logs anteriores a `14:01:22`, estado/contadores da interface e informações sobre o dispositivo conectado à outra extremidade.
 
 ---
+<br>
 
-## Pergunta de acompanhamento
+## Fiz uma Pergunta de acompanhamento 
 
-> Porque respondeu com verificação em formato de CLI?
+<br>
 
-### Resposta
+> Decidi fazer uma pergunta: Porque respondeu com verificação em formato de CLI?
+
+<br>
+
+### Nova Resposta da IA ChatGPT 
 
 Porque no seu prompt você pediu, para cada problema, “uma forma de confirmar o diagnóstico por meio de comando ou verificação compatível com a plataforma identificada no log”.
 
@@ -93,3 +100,5 @@ Ou, mantendo o comando sem “cara de terminal”:
 > Verificação: `show interfaces GigabitEthernet1/0/1` e `show spanning-tree vlan 10`.
 
 Então o formato CLI foi uma escolha de apresentação minha, não uma exigência do seu prompt. Para esse tipo de resposta, eu considero a segunda forma mais limpa e proporcional.
+
+---
