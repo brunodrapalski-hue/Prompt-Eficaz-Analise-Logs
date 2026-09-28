@@ -46,7 +46,7 @@ O log (com padrão de sistema Cisco IOS) demonstra a queda de uma interface que 
 
 ---
 
->br>
+<br>
 
 ## Fiz uma Pergunta de acompanhamento
 
