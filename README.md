@@ -46,19 +46,19 @@ Procurei responder aos desafios comuns em análises feitas por IA: receber uma r
 
 ## Como usar
 
-1. Abra o arquivo [prompt.md](prompt.md).
+1. Abra o arquivo [prompt](prompt.md).
 2. Copie o prompt completo.
 3. Cole o conteúdo em uma IA de sua preferência.
 4. Substitua `COLE O LOG AQUI` pelo trecho de log que deseja analisar, mantendo as tags `<log>` e `</log>`.
 5. Envie a mensagem e compare a análise com as evidências presentes no log.
 
-> Para reproduzir exatamente o cenário usado neste projeto, utilize o arquivo [exemplo-log.txt](exemplo-log.txt).
+> Para reproduzir exatamente o cenário usado neste projeto, utilize o arquivo [exemplo-log](exemplo-log.txt).
 
 <br>
 
 ## Exemplo utilizado na validação
 
-Para validar o prompt, utilizei o trecho de log fornecido no próprio desafio, mantendo o conteúdo das mensagens e organizando cada evento em uma única linha no arquivo [exemplo-log.txt](exemplo-log.txt).
+Para validar o prompt, utilizei o trecho de log fornecido no próprio desafio, mantendo o conteúdo das mensagens e organizando cada evento em uma única linha no arquivo [exemplo-log](exemplo-log.txt).
 
 O trecho contém, em uma sequência curta de eventos:
 
