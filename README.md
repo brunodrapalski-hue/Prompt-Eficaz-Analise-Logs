@@ -24,8 +24,6 @@ Não determinei qual IA é melhor, mas observei como cada uma interpretaria as m
 | [resposta-esperada.md](resposta-esperada.md) | Interpretação de referência para os eventos do log |
 | [validacao/](validacao/) | Resultados obtidos ao testar o prompt em diferentes IAs |
 
-///
-
 <br>
 
 ## Como o prompt foi construído
@@ -44,6 +42,8 @@ Procurei responder aos desafios comuns em análises feitas por IA: receber uma r
 | **Sugerir uma forma de confirmação** | Permitir continuidade da investigação quando a plataforma puder ser identificada |
 | **Informar o que falta** | Deixar claro quando o trecho de log não é suficiente para concluir a causa |
 
+<br>
+
 ## Como usar
 
 1. Abra o arquivo [prompt.md](prompt.md).
@@ -52,7 +52,9 @@ Procurei responder aos desafios comuns em análises feitas por IA: receber uma r
 4. Substitua `COLE O LOG AQUI` pelo trecho de log que deseja analisar, mantendo as tags `<log>` e `</log>`.
 5. Envie a mensagem e compare a análise com as evidências presentes no log.
 
-Para reproduzir exatamente o cenário usado neste projeto, utilize o arquivo [exemplo-log.txt](exemplo-log.txt).
+> Para reproduzir exatamente o cenário usado neste projeto, utilize o arquivo [exemplo-log.txt](exemplo-log.txt).
+
+<br>
 
 ## Exemplo utilizado na validação
 
@@ -69,9 +71,11 @@ O trecho contém, em uma sequência curta de eventos:
 
 Esse conjunto foi útil para testar se a IA consegue diferenciar eventos relacionados entre si de problemas independentes.
 
+<br>
+
 ## Resposta esperada
 
-O arquivo [resposta-esperada.md](resposta-esperada.md) serve como referência para avaliar a interpretação produzida pela IA.
+O arquivo [resposta-esperada](resposta-esperada.md) serve como referência para avaliar a interpretação produzida pela IA.
 
 A intenção não é exigir uma resposta textual idêntica, mas verificar se a análise:
 
@@ -82,7 +86,9 @@ A intenção não é exigir uma resposta textual idêntica, mas verificar se a a
 - evita afirmar uma causa raiz quando o log não fornece evidências suficientes;
 - indica próximos passos coerentes para continuar a investigação.
 
-- ## Validação em diferentes IAs
+<br>
+
+ ## Validação em diferentes IAs
 
 Como validação complementar, executei o prompt em quatro ferramentas diferentes:
 
@@ -95,13 +101,17 @@ Como validação complementar, executei o prompt em quatro ferramentas diferente
 
 O objetivo não foi comparar ou classificar os modelos, mas observar se as instruções principais do prompt continuavam sendo respeitadas em ferramentas diferentes: identificar os eventos relevantes, relacionar causa e consequência, diferenciar evidência de hipótese e sugerir próximos passos coerentes.
 
-> As respostas completas foram preservadas na pasta [validacao/](validacao/) para permitir a conferência dos resultados.
+> As respostas completas foram preservadas na pasta [validacao](validacao/) para permitir a conferência dos resultados.
+
+<br>
 
 ## O que observei na validação
 
 As respostas variaram em profundidade e forma de apresentação, mas os principais eventos do log foram identificados de maneira consistente. A queda da interface e os eventos seguintes de Spanning Tree foram, em geral, relacionados como parte do mesmo incidente. O duplex mismatch e a violação de Port Security também foram reconhecidos como problemas distintos.
 
 As maiores diferenças apareceram no nível de inferência adotado por cada IA e na forma de organizar os eventos. Isso reforçou a importância de uma das regras do prompt: separar claramente o que está evidenciado no log do que ainda é hipótese.
+
+<br>
 
 ## Conclusão
 
