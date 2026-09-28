@@ -4,9 +4,16 @@ Este repositório define a entrega para o **Challenge 2**, cujo objetivo é cria
 
 A proposta foi construir um prompt que não apenas identificasse mensagens de erro, mas organizasse a análise de forma próxima a um processo real de troubleshooting: localizar os eventos relevantes, relacionar possíveis causas e consequências, diferenciar o que está evidenciado do que ainda é hipótese e transformar a interpretação em próximos passos práticos.
 
-Depois de definir essa estrutura, utilizei o mesmo cenário de log para validar o prompt em quatro ferramentas diferentes: `ChatGPT`, `Claude`, `Gemini` e `Microsoft Copilot`. Cada teste foi realizado em uma conversa nova e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
+Depois de definir essa estrutura, usei o mesmo cenário de log para validar o prompt em quatro ferramentas diferentes: 
 
-A intenção dessa validação não foi determinar qual IA é melhor, mas observar como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir desses registros, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
+```bash
+`ChatGPT`, `Claude`, `Gemini` e `Microsoft Copilot`.
+```
+Cada teste foi realizado em uma conversa nova e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
+
+Não determinar qual IA é melhor, mas observar como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir desses registros, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
+
+<br>
 
 ## Entregáveis
 
@@ -16,6 +23,10 @@ A intenção dessa validação não foi determinar qual IA é melhor, mas observ
 | [exemplo-log.txt](exemplo-log.txt) | Trecho de log utilizado na validação |
 | [resposta-esperada.md](resposta-esperada.md) | Interpretação de referência para os eventos do log |
 | [validacao/](validacao/) | Resultados obtidos ao testar o prompt em diferentes IAs |
+
+///
+
+<br>
 
 ## Como o prompt foi construído
 
