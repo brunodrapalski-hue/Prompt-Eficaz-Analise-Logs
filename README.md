@@ -1,51 +1,103 @@
-# Prompt para análise de logs de infraestrutura
+# Análise de Logs de Infraestrutura com IA
 
-Prompt para que uma IA (ChatGPT, Claude, Gemini, Copilot etc.) leia um trecho de log bruto e:
+Este repositório define a entrega para o **Challenge 2**, cujo objetivo é criar um prompt capaz de apoiar a análise de logs de infraestrutura utilizando uma IA.
 
-- identifique erros, falhas e comportamentos anômalos;
-- explique resumidamente o que pode estar acontecendo;
-- sugira uma solução simples.
+A proposta foi construir um prompt que não apenas identificasse mensagens de erro, mas organizasse a análise de forma próxima a um processo real de troubleshooting: localizar os eventos relevantes, relacionar possíveis causas e consequências, diferenciar o que está evidenciado do que ainda é hipótese e transformar a interpretação em próximos passos práticos.
+
+Depois de definir essa estrutura, utilizei o mesmo cenário de log para validar o prompt em quatro ferramentas diferentes: `ChatGPT`, `Claude`, `Gemini` e `Microsoft Copilot`. Cada teste foi realizado em uma conversa nova e sem referências anteriores, e as respostas foram preservadas no repositório para permitir a comparação posterior.
+
+A intenção dessa validação não foi determinar qual IA é melhor, mas observar como cada uma interpretaria as mesmas instruções e as mesmas evidências. A partir desses registros, também fiz uma leitura comparativa das respostas, destacando diferenças de profundidade, organização, nível de inferência e aderência às regras definidas no prompt.
 
 ## Entregáveis
 
 | Arquivo | Conteúdo |
 |---|---|
-| [prompt.md](prompt.md) | O prompt completo, pronto para colar na IA |
-| [exemplo-log.txt](exemplo-log.txt) | O log de exemplo do desafio |
-| [resposta-esperada.md](resposta-esperada.md) | A resposta esperada, com a interpretação de cada mensagem relevante |
-| [validacao/](validacao/) | Respostas reais de quatro IAs ao prompt |
-
-## Como usar
-
-1. Abra o [prompt.md](prompt.md) e copie o bloco de texto.
-2. Cole na IA, substitua `COLE O LOG AQUI` pelo log, mantendo as tags `<log>` e `</log>`, e envie.
-
-> Antes de colar logs reais em uma IA pública, remova ou mascare dados sensíveis (IPs públicos, nomes de clientes, usuários, senhas).
+| [prompt.md](prompt.md) | Prompt completo, pronto para ser utilizado em uma IA |
+| [exemplo-log.txt](exemplo-log.txt) | Trecho de log utilizado na validação |
+| [resposta-esperada.md](resposta-esperada.md) | Interpretação de referência para os eventos do log |
+| [validacao/](validacao/) | Resultados obtidos ao testar o prompt em diferentes IAs |
 
 ## Como o prompt foi construído
 
-| Instrução do prompt | Por quê |
+Durante a elaboração, procurei responder aos desafios comuns em análises feitas por IA: receber uma resposta tecnicamente convincente, mas baseada em informações que não estavam presentes no log.
+
+Por isso, o prompt foi estruturado para manter a análise presa às evidências disponíveis, diferenciar fatos de hipóteses, considerar a relação entre os eventos e terminar com próximos passos práticos de investigação.
+
+| Instrução do prompt | Intenção |
 |---|---|
-| **Papel** ("atue como um analista de infraestrutura") | Direciona o vocabulário e o nível técnico da resposta |
-| **Apenas o que está no log**, sem inventar | Reduz respostas com eventos, equipamentos ou configurações imaginados |
-| **Citar horário e mensagem** | Permite conferir cada conclusão contra o log |
-| **Evidenciado × hipótese** | Um log mostra sintomas, não certezas; a resposta precisa deixar isso claro |
-| **Causa × consequência** | Evita tratar como problemas separados os eventos que são efeito de outro. No exemplo, os 6 eventos de Spanning Tree são consequência da queda de um link |
-| **Resumo primeiro, depois problemas por prioridade** | Quem lê entende a situação em segundos. A prioridade considera a severidade e o impacto, e não a ordem cronológica |
-| **Evidência, diagnóstico, impacto, ação e confirmação** para cada problema | Transforma a análise em próximos passos práticos |
-| **Comandos só da plataforma identificada** | A resposta pode ser executada; se a plataforma não for clara, a IA não inventa comandos |
-| **Informar os dados que faltam** | Quando o log não basta, a resposta orienta a continuação da análise |
-| **Resposta curta, em português** | Atende ao pedido de explicação resumida e solução simples |
+| **Atuar como analista de infraestrutura** | Direcionar o vocabulário e o nível técnico da resposta |
+| **Basear a análise apenas no log** | Reduzir conclusões baseadas em eventos, equipamentos ou configurações não informados |
+| **Citar horário e mensagem** | Permitir que cada conclusão seja conferida diretamente no log |
+| **Diferenciar evidência de hipótese** | Evitar tratar uma possibilidade como causa confirmada |
+| **Relacionar causa e consequência** | Evitar transformar eventos derivados do mesmo incidente em problemas independentes |
+| **Priorizar os problemas** | Organizar a resposta considerando severidade e possível impacto |
+| **Informar impacto e ação** | Transformar a interpretação em próximos passos úteis |
+| **Sugerir uma forma de confirmação** | Permitir continuidade da investigação quando a plataforma puder ser identificada |
+| **Informar o que falta** | Deixar claro quando o trecho de log não é suficiente para concluir a causa |
 
-## Exemplo de log
+## Como usar
 
-O [exemplo-log.txt](exemplo-log.txt) é o log fornecido no desafio. No PDF, algumas mensagens estavam quebradas em duas linhas; aqui, cada evento ocupa uma linha, como em um log real. O conteúdo das mensagens não foi alterado.
+1. Abra o arquivo [prompt.md](prompt.md).
+2. Copie o prompt completo.
+3. Cole o conteúdo em uma IA de sua preferência.
+4. Substitua `COLE O LOG AQUI` pelo trecho de log que deseja analisar, mantendo as tags `<log>` e `</log>`.
+5. Envie a mensagem e compare a análise com as evidências presentes no log.
 
-O log mostra, em 13 segundos:
+Para reproduzir exatamente o cenário usado neste projeto, utilize o arquivo [exemplo-log.txt](exemplo-log.txt).
 
-- a queda de um link, com a reconvergência do Spanning Tree que ela provocou;
-- um duplex mismatch;
-- uma violação de port security;
-- uma alteração de configuração remota.
+## Exemplo utilizado na validação
 
-É um bom teste para verificar se a IA diferencia causa de consequência e prioriza corretamente.
+Para validar o prompt, utilizei o trecho de log fornecido no próprio desafio, mantendo o conteúdo das mensagens e organizando cada evento em uma única linha no arquivo [exemplo-log.txt](exemplo-log.txt).
+
+O trecho contém, em uma sequência curta de eventos:
+
+- queda de uma interface;
+- reconvergência do Spanning Tree;
+- alteração da root bridge;
+- duplex mismatch;
+- violação de Port Security;
+- alteração de configuração via acesso remoto.
+
+Esse conjunto foi útil para testar se a IA consegue diferenciar eventos relacionados entre si de problemas independentes.
+
+## Resposta esperada
+
+O arquivo [resposta-esperada.md](resposta-esperada.md) serve como referência para avaliar a interpretação produzida pela IA.
+
+A intenção não é exigir uma resposta textual idêntica, mas verificar se a análise:
+
+- identifica os principais eventos do log;
+- relaciona a queda da interface com a reconvergência do Spanning Tree;
+- diferencia fatos de hipóteses;
+- trata o duplex mismatch e a violação de Port Security como problemas independentes;
+- evita afirmar uma causa raiz quando o log não fornece evidências suficientes;
+- indica próximos passos coerentes para continuar a investigação.
+
+- ## Validação em diferentes IAs
+
+Como validação complementar, executei o prompt em quatro ferramentas diferentes:
+
+- ChatGPT;
+- Claude;
+- Gemini;
+- Microsoft Copilot.
+
+Os testes foram feitos em conversas novas, sem referências anteriores, utilizando o mesmo trecho de log.
+
+O objetivo não foi comparar ou classificar os modelos, mas observar se as instruções principais do prompt continuavam sendo respeitadas em ferramentas diferentes: identificar os eventos relevantes, relacionar causa e consequência, diferenciar evidência de hipótese e sugerir próximos passos coerentes.
+
+As respostas completas foram preservadas na pasta [validacao/](validacao/) para permitir a conferência dos resultados.
+
+## O que observei na validação
+
+As respostas variaram em profundidade e forma de apresentação, mas os principais eventos do log foram identificados de maneira consistente.
+
+A queda da interface e os eventos seguintes de Spanning Tree foram, em geral, relacionados como parte do mesmo incidente. O duplex mismatch e a violação de Port Security também foram reconhecidos como problemas distintos.
+
+As maiores diferenças apareceram no nível de inferência adotado por cada IA e na forma de organizar os eventos. Isso reforçou a importância de uma das regras do prompt: separar claramente o que está evidenciado no log do que ainda é hipótese.
+
+## Conclusão
+
+A principal preocupação nesta entrega foi tornar a análise útil e verificável: partir das evidências presentes no log, evitar conclusões sem suporte, organizar os eventos por prioridade e transformar a interpretação em próximos passos de investigação.
+
+Os arquivos deste repositório permitem reproduzir o teste, comparar os resultados e revisar as decisões adotadas na construção do prompt.
