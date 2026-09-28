@@ -1,4 +1,4 @@
-# Prompt — análise de logs de infraestrutura
+# Prompt — Análise de logs de infraestrutura
 
 Copie o bloco abaixo, cole na IA e substitua `COLE O LOG AQUI` pelo log a ser analisado, mantendo as tags `<log>` e `</log>`.
 
