@@ -18,3 +18,4 @@ Aqui relato as Respostas reais de quatro IAs que utilizei para validação ao [p
 - O log foi colado como estava no PDF do desafio, com mensagens quebradas em duas linhas.
   
 > No ChatGPT, no Gemini e no Claude, depois da resposta, foi feita a pergunta "Porque respondeu com verificação em formato de CLI?". Para explorar a resposta.
+> O Copilot foi a única IA que não trouxe `verificações de CLI` para apoio, esta descreveu a verificação dos problemas conceitualmente.
