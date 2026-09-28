@@ -5,9 +5,11 @@
 | **Plano / modelo** | ChatGPT Plus, esforço alto |
 | **Condições** | Chat novo, sem referências. Ver [condições do teste](README.md#condições-do-teste) |
 
-Resposta transcrita sem alterações de texto; apenas os títulos foram rebaixados um nível para caber neste arquivo.
+> Resposta colada sem alterações de texto.
 
-## Resposta
+<br>
+
+## Resposta da IA ChatGPT [prompt](prompt.md)
 
 O log indica uma **falha de enlace em Gi1/0/1 às 14:01:22**, seguida imediatamente por uma **reconvergência do Spanning Tree na VLAN 10**, com alteração do caminho até a root bridge. Além disso, há dois problemas independentes relevantes: **duplex mismatch em Gi1/0/2** e uma **violação de Port Security em Gi1/0/5**.
 
