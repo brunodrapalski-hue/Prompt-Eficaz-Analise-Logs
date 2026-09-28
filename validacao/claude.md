@@ -5,6 +5,8 @@
 | **Plano / modelo** | Claude Pro, Opus 5.5, esforço alto |
 | **Condições** | Chat novo, sem referências. Ver [condições do teste](README.md#condições-do-teste) |
 
+<br>
+
 > Resposta colada sem alterações de texto.
 
 <br>
