@@ -9,6 +9,8 @@ Aqui relato as Respostas reais de quatro IAs que utilizei para validação ao [p
 | Claude | Claude Pro, Opus 5.5, esforço alto | [claude.md](claude.md) |
 | Copilot | Microsoft 365 Copilot | [copilot.md](copilot.md) |
 
+<br>
+
 ## Condições do teste
 
 - Cada IA foi usada em um chat novo, sem referências a conversas anteriores.
