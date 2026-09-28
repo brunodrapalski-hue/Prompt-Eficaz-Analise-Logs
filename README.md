@@ -13,7 +13,7 @@ Prompt para que uma IA (ChatGPT, Claude, Gemini, Copilot etc.) leia um trecho de
 | [prompt.md](prompt.md) | O prompt completo, pronto para colar na IA |
 | [exemplo-log.txt](exemplo-log.txt) | O log de exemplo do desafio |
 | [resposta-esperada.md](resposta-esperada.md) | A resposta esperada, com a interpretação de cada mensagem relevante |
-| [validacao/](validacao/) | Respostas reais de IAs ao prompt, comparadas com a resposta esperada |
+| [validacao/](validacao/) | Respostas reais de quatro IAs ao prompt |
 
 ## Como usar
 
